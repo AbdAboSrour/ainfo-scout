@@ -3,17 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrom Extention</title>
+    <title>Ainfo Scout</title>
+    <style>
+        #ai-modal {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 50%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 9999;
+            border-radius: 8px;
+            display: none; /* Hidden by default */
+        }
+        #ai-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        #ai-modal .modal-body {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #ai-modal .close-modal {
+            margin-top: 10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #btn1{
+            background-color: aqua;
+
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h2>Information About Your Article </h2>
-        <ul>
-            <p id="data"></p>
-        </ul>
+    <div id="ai-modal">
+        <div class="modal-header">
+            <button style= "color:aqua" id="btn1">Summary</button>
+            <button style= "color:aqua" id="btn2">Transalate</button>
+            <button style= "color:aqua" id="btn3">Look for similar articles</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+            Processing...
+        </div>
+        <button class="close-modal" id="close-modal">Close</button>
     </div>
-
+    <script src="background.js"></script>
 </body>
-<script src="script.js"></script>
-
 </html>

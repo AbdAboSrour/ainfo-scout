@@ -4,8 +4,14 @@
     "description": "Ai Chrome Extension For Summraize Articles",
     "manifest_version": 3,
     "author": "Ai Team",
-    "action":{
-        "default_popup": "index.html",
-        "default_title": "Ai Chrome Extension"
+    "permissions": [
+        "contextMenus",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+
     }
 }
