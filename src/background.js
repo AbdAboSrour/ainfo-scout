@@ -1,6 +1,6 @@
+import { AinfoScoutManager, showTextInsideModal } from './background-utils.js';
 
-
-import { injectAndSummarizeText } from './backgroun-utils.js';
+const summaryGenerator = new AinfoScoutManager();
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
@@ -13,10 +13,11 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     if (info.menuItemId === "ainfoScout") {
         const selectedText = info.selectionText;
-        chrome.scripting.executeScript({
+        const summary = await summaryGenerator.generateSummary(selectedText);
+        await chrome.scripting.executeScript({
             target: { tabId: tab.id },
-            func: injectAndSummarizeText,
-            args: [selectedText]
+            func: showTextInsideModal,
+            args: [summary]
         });
     }
 });
