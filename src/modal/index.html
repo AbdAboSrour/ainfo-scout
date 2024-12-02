@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +17,21 @@
             padding: 20px;
             z-index: 9999;
             border-radius: 8px;
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
         }
+
         #ai-modal .modal-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
         }
+
         #ai-modal .modal-body {
             margin-top: 10px;
             font-size: 14px;
         }
+
         #ai-modal .close-modal {
             margin-top: 10px;
             background: red;
@@ -36,23 +41,43 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        #btn1{
+
+        #btn1 {
             background-color: aqua;
 
         }
     </style>
 </head>
+
 <body>
     <div id="ai-modal">
-        <div class="modal-header">
-            <button style= "color:aqua" id="btn1">Summary</button>
-            <button style= "color:aqua" id="btn2">Transalate</button>
-            <button style= "color:aqua" id="btn3">Look for similar articles</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Ainfo Scout</h3>
+            <button id="close-modal" style="
+                background: blue;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;">
+                x
+            </button>
         </div>
-        <div class="modal-body" id="modal-body">
-            Processing...
+        <div id="modal-body" style="margin-top: 10px; font-size: 14px;">
+            <!-- Generated summary or API response goes here -->
         </div>
-        <button class="close-modal" id="close-modal">Close</button>
+        <button id="action-api" style="
+            margin-top: 10px;
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;">
+            Call API
+        </button>
+        <button id="mybutton">click me</button>
+
     </div>
     <script src="../background.js"></script>
 </body>
